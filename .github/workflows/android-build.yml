@@ -17,14 +17,12 @@ jobs:
           channel: stable
       - name: Install dependencies
         run: |
-          cd mobile/app
-          flutter pub get
+            flutter pub get
       - name: Build APK
         run: |
-          cd mobile/app
-          flutter build apk --release
+            flutter build apk --release
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: app-release.apk
-          path: mobile/app/build/app/outputs/flutter-apk/app-release.apk
+          path: build/app/outputs/flutter-apk/app-release.apk
